@@ -1,0 +1,1 @@
+let DrawArea = document.getElementById('drawCanvas');
