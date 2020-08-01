@@ -18,3 +18,7 @@ header{
 #footer{
 	padding:16px;
 }
+.kel-hover{
+	cursor:pointer;
+	transition-duration:0.3s;
+}
