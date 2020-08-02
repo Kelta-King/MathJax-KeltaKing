@@ -12,7 +12,7 @@
 
 <div class="w3-row">
 <div class="w3-half">
-<canvas id="drawCanvas" width="750" height="500">
+<canvas id="drawCanvas" width="750" height="500" onmousemove="coordinate(event)">
 We're sorry, the browser you are using does not support. Please upgrade your browser.
 </canvas>
 </div>
@@ -26,16 +26,16 @@ We're sorry, the browser you are using does not support. Please upgrade your bro
 </thead>
 <tbody>
 <tr>
-<td><button class="w3-button w3-white kel-hover w3-hover-blue"><i class="fa fa-pencil"></i></button></td>
+<td><button class="w3-button w3-white kel-hover w3-hover-blue" title="pencil"><i class="fa fa-pencil"></i></button></td>
 </tr>
 <tr>
-<td><button class="w3-button w3-white kel-hover w3-hover-blue"><i class="fa fa fa-eraser"></i></button></td>
+<td><button class="w3-button w3-white kel-hover w3-hover-blue" title="eraser"><i class="fa fa fa-eraser"></i></button></td>
 </tr>
 <tr>
-<td><button class="w3-button w3-white kel-hover w3-hover-blue"><i class="fa fa-clone"></i></button></td>
+<td><button class="w3-button w3-white kel-hover w3-hover-blue" title="save"><i class="fa fa-clone"></i></button></td>
 </tr>
 <tr>
-<td><button class="w3-button w3-white kel-hover w3-hover-blue"><i class="fa fa-remove"></i></button></td>
+<td><button class="w3-button w3-white kel-hover w3-hover-blue" title="clear"><i class="fa fa-remove"></i></button></td>
 </tr>
 </tbody>
 </table>
