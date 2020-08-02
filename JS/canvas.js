@@ -51,17 +51,20 @@ let x = 30;
 let drawable = 0; //can be 0 or 1
 // 0 for not drawable and 1 for drawable
 
-
-//Event listners
-DrawArea.addEventListener('click',()=>{
-	drawable = 1;
+//event listners
+document.addEventListener('keydown', function(event){
+	console.log('rr');
+	if(event.keycode == 68){
+		drawable = 1;
+		alert('here');
+	}
 });
-
 
 //continuous iterations
 setInterval(()=>{
 	
-	draw.circle(x, 30, 20, 0, Math.PI*2);
+	if(drawable == 1)
+		draw.circle(curx, cury, 20, 0, Math.PI*2);
 	
 	
-}, 1);
+}, 10);
