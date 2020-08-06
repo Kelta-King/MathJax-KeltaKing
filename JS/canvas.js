@@ -52,13 +52,22 @@ let drawable = 0; //can be 0 or 1
 // 0 for not drawable and 1 for drawable
 
 //event listners
-document.addEventListener('keydown', function(event){
-	console.log('rr');
-	if(event.keycode == 68){
+
+let events = (event) => {
+	
+	if(event.keyCode == 100){
 		drawable = 1;
-		alert('here');
+		alert('Hover drawing started');
 	}
-});
+	
+	if(event.keyCode == 102){
+		drawable = 0;
+		alert('Hovering drawing stopped');
+	}
+	
+}
+
+document.addEventListener('keypress', events);
 
 //continuous iterations
 setInterval(()=>{
