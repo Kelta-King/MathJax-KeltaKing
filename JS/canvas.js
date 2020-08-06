@@ -55,19 +55,19 @@ let drawable = 0; //can be 0 or 1
 
 let events = (event) => {
 	
-	if(event.keyCode == 100){
+	if(event.keyCode == 68){
 		drawable = 1;
 		alert('Hover drawing started');
 	}
 	
-	if(event.keyCode == 102){
+	if(event.keyCode == 70){
 		drawable = 0;
 		alert('Hovering drawing stopped');
 	}
 	
 }
 
-document.addEventListener('keypress', events);
+document.addEventListener('keydown', events);
 
 //continuous iterations
 setInterval(()=>{
