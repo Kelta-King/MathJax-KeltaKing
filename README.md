@@ -1,2 +1,3 @@
 # Teaching-Canvas
-An web based Canvas to draw and write things
+A web based Canvas to draw and write things
+It is under construction
