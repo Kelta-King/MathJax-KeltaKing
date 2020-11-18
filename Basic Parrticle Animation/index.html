@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+</style>
+</head>
+<body>
+<script>
+
+let canvas = document.createElement("canvas");
+let context = canvas.getContext("2d");
+canvas.width = 1000;
+canvas.height = 600;
+
+document.body.appendChild(canvas); 
+context.fillRect(0, 0, canvas.width, canvas.height);
+
+function drawRect(x,y,width,height,color){
+
+	context.fillStyle = color;
+	context.fillRect(x,y,width,height);
+
+}
+
+function drawCircle(x,y,r,color){
+
+	context.beginPath();
+	context.fillStyle = color;
+	// After setting the fill style, draw an arc on the canvas
+	context.arc(x, y, r, 0, Math.PI*2, true); 
+	context.closePath();
+	context.fill();
+	content.closePath();
+
+}
+
+for(let i=0; i<canvas.width;i+=5){
+
+	for(let j = 0; j<canvas.height;j+=5){
+	
+		drawRect(i,j, 2,2,"white");
+	
+	}
+
+}
+
+</script>
+</body>
+</html>
