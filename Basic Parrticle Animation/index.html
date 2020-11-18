@@ -6,15 +6,16 @@
 </style>
 </head>
 <body>
+<div id="data"></div>
 <script>
 
 let canvas = document.createElement("canvas");
 let context = canvas.getContext("2d");
 canvas.width = 1000;
 canvas.height = 600;
+let data = document.getElementById('data');
 
 document.body.appendChild(canvas); 
-context.fillRect(0, 0, canvas.width, canvas.height);
 
 function drawRect(x,y,width,height,color){
 
@@ -27,23 +28,57 @@ function drawCircle(x,y,r,color){
 
 	context.beginPath();
 	context.fillStyle = color;
+	context.strokeStyle = "white";
 	// After setting the fill style, draw an arc on the canvas
+	context.lineWidth = 3;
 	context.arc(x, y, r, 0, Math.PI*2, true); 
 	context.closePath();
 	context.fill();
-	content.closePath();
+	context.stroke();
+	context.closePath();
 
 }
 
-for(let i=0; i<canvas.width;i+=5){
+let circle = {
+	x:0,
+	y:0,
+	r:20
+}
 
-	for(let j = 0; j<canvas.height;j+=5){
+function getMousePosition(event) { 
+	let rect = canvas.getBoundingClientRect(); 
+	let x = event.clientX - rect.left; 
+	let y = event.clientY - rect.top; 
 	
-		drawRect(i,j, 2,2,"white");
+	circle.x = x;
+	circle.y = y;
 	
+}
+
+
+setInterval(function(){
+	
+	//context.clearRect(0,0,canvas.width, canvas.height);
+	drawRect(0,0,canvas.width, canvas.height, "black");
+	drawCircle(circle.x, circle.y,circle.r,"black")
+	
+	for(let i=0; i<canvas.width;i+=5){
+
+		for(let j = 0; j<canvas.height;j+=5){
+		
+			drawRect(i,j, 2,2,"white");
+		
+		}
+
 	}
+	
+}, 50);
 
-}
+canvas.addEventListener("mousemove", function(e) 
+       { 
+            getMousePosition(e); 
+       }); 
+	
 
 </script>
 </body>
