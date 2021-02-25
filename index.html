@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert MathJax in db</title>
+</head>
+<body>
+    <textarea name="" id="data" cols="30" rows="10"></textarea>
+    <br><br>
+    <button onclick="add()">ADD</button>
+    <script>
+        let add = () => {
+
+            let data = document.getElementById("data").value;
+            let str = "data="+data;
+            let xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function(){
+
+                if(this.status == 200 && this.readyState == 4){
+
+                    alert(this.responseText);
+                    window.open("load.php", "_self");
+
+                }
+
+            }
+
+            xhttp.open("POST", "KeltaPHP/storemath.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send(str);
+
+        }
+    </script>
+</body>
+</html>
