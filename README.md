@@ -1,3 +1,2 @@
-# Teaching-Canvas
-A web based Canvas to draw and write things
-It is under construction
+# MathJax-PHP
+How to use beautiful maths with PHP and mysql database
