@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+}
+
+#outframe{
+    background-color: white;
+}
+
+.kel-hover{
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+#run{
+    background-color: #f3f3f3;
+}
+#run:hover{
+    background-color: #1a1a1a;
+}
