@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dynamic math is web whithout reloading page </title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <div id='math1'>
+        \( x^2 + b^2 = c^2 \)
+    </div>
+    hello world 1234
+    <br>
+    <div id='math2'>
+        \( a^2 + b^2 = c^2 \)
+    </div>
+
+    <button onclick='change()'>click</button>
+    <script>
+
+        const change = () => {
+            const math1 = document.getElementById("math1");
+            const math2 = document.getElementById("math2");
+            let s1 = "\\(a^2\\)";
+            let s2 = "$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$"
+            math1.innerHTML = s1;
+            math2.innerHTML = s2;
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        }
+        
+    </script>
+</body>
+</html>
